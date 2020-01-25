@@ -16,7 +16,9 @@ export const launchPuppeteer = (
   const device = options.device || getDevice();
 
   const launchOptions: LaunchOptions = {
+    ignoreHTTPSErrors: true,
     args: [
+      "--ignore-certificate-errors",
       "--disable-dev-shm-usage",
       "--no-default-browser-check",
       "--window-position=0,0",
